@@ -22,6 +22,28 @@
             <input type="checkbox" name="agree">
             <input type="submit">
         </form>
-        <script src="scripts/script.js"></script>
+        <script>
+                const form = document.querySelector("#form");
+                    form.addEventListener("submit",function(){
+                        if(form.name.value == ""){
+                            alert('Name Missing');
+                            return false;
+                        }
+                        else if(form.password.value == ""){
+                            alert('Password Missing');
+                            return false;
+                        }
+                        else if(form.password.value != form.confirmation.value)
+                        {
+                            alert('Passwords Dons\'nt Match ');
+                            return false;
+                        }
+                        else if(!form.agree.checked){
+                            alert('Box Not Checked ');
+                            return false;
+                        }
+                        return true;
+                    });
+        </script>
     </body>
 </html>
